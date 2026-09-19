@@ -1,33 +1,35 @@
-# Random Password Generator
+# Chat Application
 
 ## Description
-A Python-based Random Password Generator with a graphical user interface (GUI) built using Tkinter.
+
+A simple Python-based Chat Application that allows users to communicate with each other by sending and receiving messages.
 
 ## Features
-- Generate random passwords
-- Choose password length
-- Include uppercase letters
-- Include lowercase letters
-- Include numbers
-- Include symbols
-- Copy the generated password
-- Simple and user-friendly GUI
+
+- Send and receive messages
+- Simple and user-friendly interface
+- Real-time communication
+- Multiple users can communicate
+- Easy to use
 
 ## Technologies Used
-- Python
-- Tkinter
-- String
-- Secrets
 
-## How to Run
-1. Make sure Python is installed.
-2. Open the project in PyCharm or any Python IDE.
-3. Run `main.py`.
-4. Use the GUI to generate a password.
+- Python
+- Socket Programming
+- Tkinter
+
+## How It Works
+
+1. Start the server.
+2. Run the chat application.
+3. Enter the required details.
+4. Connect to the server.
+5. Send and receive messages in real time.
 
 ## Project Structure
+
 ```text
-Python-Task1-RandomPasswordGenerator/
+Python-Task5-Application/
 │
 ├── main.py
 └── README.md

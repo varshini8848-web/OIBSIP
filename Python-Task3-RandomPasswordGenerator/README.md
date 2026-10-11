@@ -20,14 +20,6 @@ A simple Python-based Random Password Generator that creates strong and secure p
 - Random Module
 - String Module
 
-## How It Works
-
-1. Run the application.
-2. Enter or select the required password length.
-3. Click the Generate Password button.
-4. A random password will be generated.
-5. The generated password can be copied and used.
-
 ## Project Structure
 
 ```text

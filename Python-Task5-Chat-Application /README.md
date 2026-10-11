@@ -1,97 +1,58 @@
-import socket
-import threading
-from datetime import datetime
+# Chat Application
 
-HOST = "127.0.0.1"
-PORT = 5555
+## 📌 Project Description
 
-clients = []
-usernames = []
+The Chat Application is a Python-based project that allows users to communicate through a simple chat interface. It demonstrates basic concepts of Python programming and application development.
 
+## 🎯 Objectives
 
-def get_time():
-    return datetime.now().strftime("%H:%M")
+* Develop a simple chat application.
+* Enable users to exchange messages.
+* Understand message handling and application logic.
+* Improve Python programming skills.
 
+## 🛠️ Technologies Used
 
-def broadcast(message, sender=None):
-    for client in clients:
-        if client != sender:
-            try:
-                client.send(message.encode("utf-8"))
-            except:
-                remove_client(client)
+* Python
+* Tkinter (for GUI, if used)
+* Socket Programming (if implemented)
 
+## ✨ Features
 
-def remove_client(client):
-    if client in clients:
-        index = clients.index(client)
-        username = usernames[index]
+* Simple and user-friendly interface.
+* Send and receive messages (depending on the implementation).
+* Easy-to-use chat window.
+* Basic message handling.
 
-        clients.remove(client)
-        usernames.remove(username)
+## ⚙️ How to Run
 
-        client.close()
+1. Install Python on your computer.
+2. Download or clone this repository.
+3. Open the project folder in PyCharm or VS Code.
+4. Run the main Python file.
+5. Follow the instructions displayed by the application.
 
-        message = f"[{get_time()}] {username} has left the chat."
-        print(message)
+## 📂 Project Structure
 
-        broadcast(message)
+```text
+Chat-Application/
+│
+├── chat_application.py
+└── README.md
+```
 
+*Note: Replace `chat_application.py` with your actual Python filename if it is different.*
 
-def handle_client(client):
-    try:
-        username = client.recv(1024).decode("utf-8")
+## 📚 Learning Outcomes
 
-        clients.append(client)
-        usernames.append(username)
+* Practiced Python programming.
+* Learned basic chat application development.
+* Improved understanding of user interaction and message handling.
 
-        join_message = f"[{get_time()}] {username} joined the chat."
-        print(join_message)
+## 👩‍💻 Author
 
-        broadcast(join_message, client)
+Varshini
 
-        while True:
-            message = client.recv(1024).decode("utf-8")
+## 🏢 Internship
 
-            if not message:
-                break
-
-            full_message = f"[{get_time()}] {username}: {message}"
-
-            print(full_message)
-            broadcast(full_message, client)
-
-    except:
-        pass
-
-    finally:
-        remove_client(client)
-
-
-def start_server():
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-    server.bind((HOST, PORT))
-    server.listen()
-
-    print("===================================")
-    print("       CHAT SERVER STARTED")
-    print("===================================")
-    print(f"Server running on {HOST}:{PORT}")
-    print("Waiting for clients...\n")
-
-    while True:
-        client, address = server.accept()
-
-        print(f"New connection from {address}")
-
-        thread = threading.Thread(
-            target=handle_client,
-            args=(client,)
-        )
-
-        thread.start()
-
-
-if __name__ == "__main__":
-    start_server()
+Oasis Infobyte Internship Program

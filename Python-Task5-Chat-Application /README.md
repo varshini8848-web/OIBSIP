@@ -30,6 +30,5 @@ The Chat Application is a Python-based project that allows users to communicate 
 Python-Task2-Chat-Application/
 | 
 ├── main.py
-├── README.md
 └── README.md
 ```

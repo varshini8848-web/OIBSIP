@@ -17,13 +17,6 @@ A Python-based weather application that allows users to enter a city name and vi
 - Weather API
 - Requests library
 
-## How to Run
-1. Make sure Python is installed.
-2. Install the required libraries.
-3. Open the project in PyCharm or any Python IDE.
-4. Run `main.py`.
-5. Enter a city name to view its weather information.
-
 ## Project Structure
 ```text
 Python-Task2-BasicWeatherApp/
